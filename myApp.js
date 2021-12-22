@@ -2,8 +2,22 @@ require('dotenv').config();
 const express=require('express');
 const app =express();
 const port=3000;
+
+//create moongoose connection
 const mongoose = require('mongoose');
+const { stringify } = require('nodemon/lib/utils');
 mongoose.connect("mongodb+srv://coding70:coding70@cluster0.mmbfd.mongodb.net/Rishabhdb");
+
+//create a model
+const Schema = mongoose.Schema;
+const personSchema = new Schema ({
+  name : {type: String, required:true },
+  age : Number,
+  favoriteFoods : [String]
+});
+const Person = mongoose.model('Person',personSchema);
+
+/*
 var db = mongoose.connection;
 
 app.listen(port,()=>console.log('started listening...'));
@@ -89,7 +103,7 @@ createAndSavePersoon();
 });
 }
 
-let Person;
+let Person;*/
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
