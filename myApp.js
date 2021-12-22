@@ -85,10 +85,10 @@ var personSchema = new mongoose.Schema({
   name: String,
   age: Number,
   favoriteFoods: [String]
-});
+});*/
 
 /** 3) Create and Save a Person */
-var Person = mongoose.model('Person', personSchema,'person');
+/*var Person = mongoose.model('Person', personSchema,'person');
 
 var createAndSavePersoon = function(done) {
   var janeFonda = new Person({name: personName, age: personAge, favoriteFoods: ["eggs", "fish", "fresh fruit"]});
